@@ -16,7 +16,8 @@ def sms_reply():
     msg = request.form.get('Body')
     phone_no=request.form.get('From')
     reply=corona(msg)
-    #reply=fetch_reply(msg,phone_no)
+    if reply=="not matching":
+        reply=fetch_reply(msg,phone_no)
 
     # Create reply
     resp = MessagingResponse()
