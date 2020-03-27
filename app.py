@@ -18,6 +18,8 @@ def sms_reply():
     reply=corona(msg)
     if reply=="not matching":
         reply=fetch_reply(msg,phone_no)
+    if msg.lower()=="no":
+        reply="Please enter the name of the state you want to check."
 
     # Create reply
     resp = MessagingResponse()

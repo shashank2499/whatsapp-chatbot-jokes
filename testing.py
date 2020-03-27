@@ -22,7 +22,7 @@ def corona(state):
     stats.remove(stats[-1])
     flag=1
     for row in stats:
-        if row[1]==state:
+        if row[1].lower()==state.lower():
             result="State:{} Indians-Confirmed:{} Foreigners-Confirmed:{} Cured:{} Deaths:{}".format(row[1],row[2],row[3],row[4],row[5])
             flag=0
         if flag==1:
