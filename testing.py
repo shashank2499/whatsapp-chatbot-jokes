@@ -25,6 +25,6 @@ def corona(state):
         if row[1]==state:
             result="State:{} Indians-Confirmed:{} Foreigners-Confirmed:{} Cured:{} Deaths:{}".format(row[1],row[2],row[3],row[4],row[5])
             flag=0
-        if flag=1:
+        if flag==1:
             result="not matching"
     return result
