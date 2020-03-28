@@ -1,0 +1,13 @@
+import requests
+import json
+def countrycheck(country):
+    api_request=requests.get("https://corona.lmao.ninja/countries")
+    api=json.loads(api_request.content)
+    result=""
+    for i in range(0,183):
+        if country==api[i]["country"]:
+            result="Country: "+str(api[i]["country"])+" "
+            result+="Confirmed Cases: "+str(api[i]["cases"])+" "+"Cases Today: "+str(api[i]["todayCases"])+" Deaths: "+str(api[i]["deaths"])+" Recovered: "+str(api[i]["recovered"])
+    if result=="":
+        result="not"
+    return str(result)
