@@ -2,7 +2,7 @@ from testing import corona
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from utils import fetch_reply
-from countrycheck import country
+from country import countrycheck
 
 app = Flask(__name__)
 
@@ -17,11 +17,11 @@ def sms_reply():
     phone_no=request.form.get('From')
     reply=corona(msg)
     if reply=="not matching":
-        reply=country(msg)
+        reply=countrycheck(msg)
     if reply=="not":
         reply=fetch_reply(msg,phone_no)
     if msg.lower()=="no":
-        reply="Please enter the name of the state you want to check."
+        reply="Please enter the name of the state or country you want to check."
 
     # Create reply
     resp = MessagingResponse()

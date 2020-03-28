@@ -5,9 +5,10 @@ def countrycheck(country):
     api=json.loads(api_request.content)
     result=""
     for i in range(0,183):
-        if country==api[i]["country"]:
+        if country.lower()==api[i]["country"].lower():
             result="Country: "+str(api[i]["country"])+" "
             result+="Confirmed Cases: "+str(api[i]["cases"])+" "+"Cases Today: "+str(api[i]["todayCases"])+" Deaths: "+str(api[i]["deaths"])+" Recovered: "+str(api[i]["recovered"])
     if result=="":
         result="not"
     return str(result)
+
