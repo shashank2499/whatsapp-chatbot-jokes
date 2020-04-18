@@ -1,7 +1,7 @@
 import requests
 import json
 def countrycheck(country):
-    api_request=requests.get("https://corona.lmao.ninja/countries")
+    api_request=requests.get("https://corona.lmao.ninja/v2/countries")
     api=json.loads(api_request.content)
     result=""
     for i in range(0,183):
